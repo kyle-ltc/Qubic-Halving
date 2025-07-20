@@ -14,18 +14,28 @@
             margin: 0;
             background-color: #f0f0f0;
         }
-        #countdown {
-            font-size: 24px;
+        #countdown-container {
             text-align: center;
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
+        #qubic-logo {
+            max-width: 200px; /* Adjust size as needed */
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        #countdown {
+            font-size: 24px;
+        }
     </style>
 </head>
 <body>
-    <div id="countdown">Qubic Halving Countdown<br>Loading...</div>
+    <div id="countdown-container">
+        <img id="qubic-logo" src="qubic_logo.png" alt="Qubic Logo">
+        <div id="countdown">Qubic Halving Countdown<br>Loading...</div>
+    </div>
 
     <script>
         // Target date: August 20, 2025, 10:00 AM PST
