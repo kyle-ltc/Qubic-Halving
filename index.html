@@ -3,14 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qubic Halving Countdown</title>
-    <!-- Open Graph Meta Tags for X Preview -->
-    <meta property="og:title" content="Qubic Halving Countdown 2025">
-    <meta property="og:description" content="Countdown to the Qubic halving on August 20, 2025, reducing weekly emissions from 1 trillion to 425 billion QUBIC tokens.">
-    <meta property="og:image" content="https://cdn.pixabay.com/photo/2016/08/25/22/22/winged-sun-1620981_1280.png">
-    <meta property="og:url" content="https://kyle-ltc.github.io/Qubic-Halving/">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+    <title>Qubic Halving 2025 Countdown</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,54 +14,56 @@
             margin: 0;
             background-color: #f0f0f0;
         }
-        #countdown-container {
+        .container {
             text-align: center;
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        #qubic-logo {
-            max-width: 200px; /* Adjust size as needed */
-            width: 100%;
+        .logo {
+            max-width: 150px;
             margin-bottom: 20px;
         }
-        #countdown {
+        h1 {
             font-size: 24px;
+            color: #333;
+        }
+        #countdown {
+            font-size: 36px;
+            color: #007bff;
+            margin-top: 10px;
+        }
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .timer div {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            min-width: 60px;
+            text-align: center;
+        }
+        .timer span {
+            display: block;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <div id="countdown-container">
-        <img id="qubic-logo" src="https://cdn.pixabay.com/photo/2016/08/25/22/22/winged-sun-1620981_1280.png" alt="Winged Disc Symbol for Nibiru">
-        <div id="countdown">Qubic Halving Countdown<br>Loading...</div>
+    <div class="container">
+        <img src="qubic_logo.png" alt="Qubic Logo" class="logo">
+        <h1>Qubic Halving 2025</h1>
+        <div id="countdown" class="timer">
+            <div><span id="days">0</span> Days</div>
+            <div><span id="hours">0</span> Hours</div>
+            <div><span id="minutes">0</span> Minutes</div>
+            <div><span id="seconds">0</span> Seconds</div>
+        </div>
     </div>
 
     <script>
-        // Target date: August 20, 2025, 10:00 AM PST
-        const targetDate = new Date('2025-08-20T10:00:00-08:00').getTime();
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const timeLeft = targetDate - now;
-
-            if (timeLeft <= 0) {
-                document.getElementById('countdown').innerHTML = "Qubic Halving has occurred!";
-                return;
-            }
-
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-            document.getElementById('countdown').innerHTML = 
-                `Qubic Halving Countdown<br>${days}d ${hours}h ${minutes}m ${seconds}s`;
-        }
-
-        // Update every second
-        setInterval(updateCountdown, 1000);
-        updateCountdown(); // Initial call
-    </script>
-</body>
-</html>
+        // Set the target date and time (August 20,
