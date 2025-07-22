@@ -55,7 +55,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="images/qubic_logo.png" alt="Qubic Logo" class="logo">
+        <img src="qubic_logo.png" alt="Qubic Logo" class="logo" onerror="this.src='https://via.placeholder.com/150'; this.alt='Placeholder Logo';">
         <h1>Qubic Halving 2025</h1>
         <div id="countdown" class="timer">
             <div><span id="days">0</span> Days</div>
@@ -66,4 +66,35 @@
     </div>
 
     <script>
-        // Set the target date and time (August 20,
+        // Set the target date and time (August 20, 2025, 10:00 AM PDT)
+        const targetDate = new Date("August 20, 2025 10:00:00 GMT-0700").getTime(); // Explicitly set PDT (UTC-7)
+
+        // Update the countdown every second
+        const countdown = setInterval(() => {
+            const now = new Date().getTime(); // Current time in milliseconds
+            const distance = targetDate - now;
+
+            // Check if the countdown has ended
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById("countdown").innerHTML = "<h2>Event Started!</h2>";
+                return;
+            }
+
+            // Calculate time components
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Update the display
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+
+            console.log(`Distance: ${distance}, Days: ${days}, Hours: ${hours}, Minutes: ${minutes}, Seconds: ${seconds}`); // Debug log
+        }, 1000);
+    </script>
+</body>
+</html>
